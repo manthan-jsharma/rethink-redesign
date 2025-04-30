@@ -26,10 +26,7 @@ export default function HeroSection() {
           playsInline
           className="w-full h-full object-cover opacity-20"
         >
-          <source
-            src="/placeholder.svg?height=1080&width=1920"
-            type="video/mp4"
-          />
+          <source src="/redesign.mp4?height=1080&width=1920" type="video/mp4" />
         </video>
       </div>
 
@@ -111,7 +108,7 @@ export default function HeroSection() {
               <div className="absolute top-0 left-0 right-0 h-2 bg-blue-600"></div>
               <div className="p-1">
                 <img
-                  src="/placeholder.svg?height=600&width=800"
+                  src="/pixels.jpg?height=600&width=800"
                   alt="Healthcare AI Dashboard"
                   className="w-full h-auto rounded-xl"
                 />

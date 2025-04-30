@@ -144,7 +144,7 @@ const ClaimLandingSection = () => {
           >
             <div className="relative">
               <img
-                src="/placeholder.svg?height=600&width=800"
+                src="/pixels.jpg?height=600&width=800"
                 alt="Healthcare AI Dashboard"
                 className="w-full h-auto rounded-2xl shadow-lg"
               />

@@ -29,7 +29,7 @@ export default function InfoSection() {
           <motion.div style={{ y, opacity }} className="relative">
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="/placeholder.svg?height=600&width=800"
+                src="/pixels.jpg?height=600&width=800"
                 alt="Healthcare professionals using AI"
                 className="w-full h-auto"
               />
