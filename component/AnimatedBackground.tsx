@@ -14,6 +14,7 @@ export default function AnimatedBackground() {
 
     // Set canvas dimensions
     const setCanvasDimensions = () => {
+      if (!canvas) return;
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
@@ -40,6 +41,7 @@ export default function AnimatedBackground() {
       }
 
       update() {
+        if (!canvas) return;
         this.x += this.speedX;
         this.y += this.speedY;
 
@@ -66,25 +68,9 @@ export default function AnimatedBackground() {
       particlesArray.push(new Particle());
     }
 
-    // Animation loop
-    const animate = () => {
-      if (!ctx) return;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      for (let i = 0; i < particlesArray.length; i++) {
-        particlesArray[i].update();
-        particlesArray[i].draw();
-      }
-
-      // Connect particles with lines
-      connectParticles();
-
-      requestAnimationFrame(animate);
-    };
-
     // Connect particles with lines
     const connectParticles = () => {
-      if (!ctx) return;
+      if (!ctx || !canvas) return;
       for (let a = 0; a < particlesArray.length; a++) {
         for (let b = a; b < particlesArray.length; b++) {
           const dx = particlesArray[a].x - particlesArray[b].x;
@@ -101,6 +87,22 @@ export default function AnimatedBackground() {
           }
         }
       }
+    };
+
+    // Animation loop
+    const animate = () => {
+      if (!ctx || !canvas) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+      }
+
+      // Connect particles with lines
+      connectParticles();
+
+      requestAnimationFrame(animate);
     };
 
     animate();
