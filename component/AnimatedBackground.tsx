@@ -32,8 +32,8 @@ export default function AnimatedBackground() {
       color: string;
 
       constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
+        this.x = Math.random() * (canvas?.width ?? 0);
+        this.y = Math.random() * (canvas?.height ?? 0);
         this.size = Math.random() * 3 + 1;
         this.speedX = Math.random() * 0.5 - 0.25;
         this.speedY = Math.random() * 0.5 - 0.25;
